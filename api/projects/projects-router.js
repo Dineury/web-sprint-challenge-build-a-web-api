@@ -35,7 +35,8 @@ router.post('/', async (req, res, next) => {
 })
 
 router.put('/:id', getProjectsById, async (req, res, next) => {
- try {const { name, description, completed } = req.body
+ try {
+  const { name, description, completed } = req.body
   if(!name || !description || completed == undefined){
     res.status(400).json({
       message: "Fields can't be Empty!"
